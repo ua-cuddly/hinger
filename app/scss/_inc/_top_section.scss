@@ -1,0 +1,129 @@
+.banner {
+    min-height: 100vh;
+    background-image: url(../img/header-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    .wrapper {
+        height: 100vh;
+    }
+
+    .working-time {
+        p {
+            writing-mode: tb-rl;
+            font-size: 14px;
+            line-height: 14px;
+            transform: rotate(180deg);
+        }
+
+    }
+
+    .info {
+        .subtitle {
+            font-size: 14px;
+            line-height: 16px;
+            letter-spacing: 0.5em;
+        }
+
+        .title {
+            text-transform: uppercase;
+            font-family: 'Banny Round';
+            font-size: 96px;
+            position: relative;
+
+            &::after {
+                content: '';
+                width: 60px;
+                height: 5px;
+                background-color: $yellow;
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                border-radius: 50px;
+            }
+        }
+
+        .btn-down {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            color: #333333;
+            background-color: #fff;
+            border-radius: 50%;
+            position: relative;
+            animation-name: pulse;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            transition: $transition;
+
+            &:hover {
+                background-color: $yellow;
+                transition: $transition;
+
+                &:before {
+                    transition: $transition;
+                    border: 1px solid $yellow;
+                }
+            }
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: -15px;
+                left: -15px;
+                width: 70px;
+                height: 70px;
+                transition: $transition;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 50%;
+                animation-name: pulseScale;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+            }
+        }
+    }
+
+    .social-items {
+        .social-item {
+            color: #fff;
+
+            a {
+                transition: $transition;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+                width: 60px;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+                border-radius: 50%;
+            }
+
+            i {
+                margin: 0;
+
+                &:before {
+                    margin: 0;
+                }
+            }
+
+            &:hover {
+                a {
+
+                    transition: $transition;
+                    color: $yellow;
+                    border: 2px solid $yellow;
+                }
+            }
+        }
+    }
+}

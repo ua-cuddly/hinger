@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap');
+@import "../libs/banny.css";
+@import "fonts";
+@import "libs";
+@import "vars";
+
+@import "_base";
+
+@import "animation";
+
+@import "helpers/_display";
+@import "helpers/_flex";
+@import "helpers/_spacing";
+@import "helpers/_text-align";
+
+@import "_inc/_header";
+
+@import "_inc/_top_section";
+@import "_inc/_about";
+@import "_inc/our-team";
+
+@import "_inc/_footer";
+
+@import "media" // Всегда в конце;

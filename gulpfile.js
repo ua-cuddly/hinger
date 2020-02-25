@@ -1,6 +1,6 @@
 var gulp = require('gulp'),
 	gutil = require('gulp-util'),
-	sass = require('gulp-sass'),
+	scss = require('gulp-sass'),
 	browserSync = require('browser-sync'),
 	concat = require('gulp-concat'),
 	uglify = require('gulp-uglify'),
@@ -40,6 +40,7 @@ gulp.task('js', ['common-js'], function () {
 	return gulp.src([
 			'app/libs/jquery/dist/jquery.min.js',
 			'app/libs/aos/aos.js',
+			'app/libs/jquery-pagepiling/jquery.pagepiling.js',
 			'app/js/common.min.js', // Всегда в конце
 		])
 		.pipe(concat('scripts.min.js'))
@@ -50,9 +51,9 @@ gulp.task('js', ['common-js'], function () {
 		}));
 });
 
-gulp.task('sass', function () {
-	return gulp.src('app/sass/**/*.sass')
-		.pipe(sass({
+gulp.task('scss', function () {
+	return gulp.src('app/scss/**/*.scss')
+		.pipe(scss({
 			outputStyle: 'expanded'
 		}).on("error", notify.onError()))
 		.pipe(rename({
@@ -65,8 +66,8 @@ gulp.task('sass', function () {
 		.pipe(browserSync.stream())
 });
 
-gulp.task('watch', ['sass', 'js', 'browser-sync'], function () {
-	gulp.watch('app/sass/**/*.sass', ['sass']);
+gulp.task('watch', ['scss', 'js', 'browser-sync'], function () {
+	gulp.watch('app/scss/**/*.scss', ['scss']);
 	gulp.watch(['libs/**/*.js', 'app/js/common.js'], ['js']);
 	gulp.watch('app/*.html', browserSync.reload);
 });
@@ -77,7 +78,7 @@ gulp.task('imagemin', function () {
 		.pipe(gulp.dest('dist/img'));
 });
 
-gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function () {
+gulp.task('build', ['removedist', 'imagemin', 'scss', 'js'], function () {
 
 	var buildFiles = gulp.src([
 		'app/*.html',

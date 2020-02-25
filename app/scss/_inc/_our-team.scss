@@ -1,0 +1,38 @@
+.our-team {
+    min-height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    .info {
+        width: 50%;
+
+        .desc {
+            text-align: center;
+
+            p {
+                font-size: 18px;
+                line-height: 28px;
+                font-weight: 300;
+            }
+        }
+    }
+
+    .img {
+        width: 50%;
+        position: relative;
+
+        img {
+            width: calc(100% - 125px)
+        }
+
+        #square {
+            position: absolute;
+            left: -110px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+    }
+}
